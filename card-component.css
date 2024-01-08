@@ -1,0 +1,42 @@
+html{
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+}
+
+.user-container{
+    width: 650px;
+    height: 250px;
+    padding: 10px;
+    margin: 10px;
+    border: solid black 1px;
+    display: grid;
+
+    > .user-input{
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+
+
+.container{
+    display: grid;
+    /*grid-template-columns: auto auto auto;*/
+}
+
+.card-component{
+    width: 350px;
+    height: 550px;
+    padding: 10px;
+    margin: 10px;
+    border: solid black 1px;
+}
+
+.pic{
+    width: 100%;
+}
+

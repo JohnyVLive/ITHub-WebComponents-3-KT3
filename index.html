@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточки с контентом</title>
+    <link rel="stylesheet" href="card-component.css">
+
+</head>
+<body>
+
+<template id="tmpl-card">
+    <style>
+        h2{
+            color: darkred;
+            font-size: 1.2em;
+        }
+    </style>
+
+    <h2><slot name="header"></slot></h2>
+    <p><slot name="content"></slot></p>
+    <slot name="img-content"><img src="" alt=""/></slot>
+</template>
+
+
+<div class="user-container">
+    <input id="user-header" type="text" class="user-input" placeholder="Заголовок" maxlength="30">
+    <textarea id="user-content" type="text" class="user-input" placeholder="Контент"></textarea>
+    <input id="user-img" type="text" class="user-input" placeholder="Картинка">
+    <input id="user-send" type="button" class="user-input" value="Отправить контент">
+</div>
+
+<div id="container" class="container">
+
+</div>
+
+
+
+<script src="card-component.js"></script>
+
+</body>
+</html>
