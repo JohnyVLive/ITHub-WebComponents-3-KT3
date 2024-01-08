@@ -3,6 +3,7 @@ const divContainer = document.getElementById('container')
 const userHeader = document.getElementById('user-header')
 const userContent = document.getElementById('user-content')
 const userImg = document.getElementById('user-img')
+const userImgAlt = document.getElementById('user-img-alt')
 const userSend = document.getElementById('user-send')
 
 
@@ -31,7 +32,8 @@ customElements.define("card-component", class extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
                 <h2><slot name="header"></slot></h2>
-                <p><slot name="content"></slot></p>`
+                <p><slot name="content"></slot></p>
+                <img><slot name="pic"></slot>`
         shadowRoot.appendChild(tmplContent.cloneNode(true))
 
     }
@@ -44,7 +46,10 @@ function addContent(){
     cardComponent.innerHTML = `
         <h2 slot="header">${userHeader.value}</h2>
         <p slot="content">${userContent.value}</p>`
-    // console.log(cardComponent.content)
+    if (userImg) cardComponent.innerHTML += `
+        <img class="pic" slot="pic" src="${'images/' + userImg.value}" alt="${userImgAlt.value}"/>`
+
+    // console.log(cardComponent.innerHTML)
     divContainer.append(cardComponent)
     // console.log(divContainer.innerHTML)
 
@@ -62,4 +67,5 @@ function clearContent(){
     userHeader.value = null
     userContent.value = null
     userImg.value = null
+    userImgAlt.value = null
 }
